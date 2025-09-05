@@ -41,7 +41,7 @@ local function distanceCheck()
     if not currentVehPlate or plate ~= currentVehPlate or recheckCurrentVeh <= 0 then
         recheckCurrentVeh = 10000
 
-        local data = lib.callback.await("jg-vehiclemileage:server:get-mileage", false, plate)
+        local data = lib.callback.await("DP-VehicleMileage:server:get-mileage", false, plate)
         if data.error then
             currentVehOwned = false
             currentVehPlate = plate
@@ -79,7 +79,7 @@ local function distanceCheck()
 
     if roundedMileage ~= lastUpdatedMileage then
         Entity(vehicle).state:set("vehicleMileage", roundedMileage)
-        TriggerServerEvent("jg-vehiclemileage:server:update-mileage", currentVehPlate, roundedMileage)
+        TriggerServerEvent("DP-VehicleMileage:server:update-mileage", currentVehPlate, roundedMileage)
         lastUpdatedMileage = roundedMileage
     end
 end
