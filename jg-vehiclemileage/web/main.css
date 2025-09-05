@@ -1,0 +1,55 @@
+@font-face {
+  font-family: bankgothic;
+  src: url("./font/bankgothic.ttf");
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: none;
+  overflow: hidden;
+}
+
+.odometer {
+  display: none;
+  z-index: 9999;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  text-align: right;
+  border-radius: .5vh;
+  gap: 0.3vw;
+  padding: 0 .2vw;
+  width: auto;
+  height: 21px;
+  line-height: 21px;
+  font-size: .9rem;
+  font-family: bankgothic;
+  white-space: nowrap;
+  user-select: none;
+  transition: all 0.3s ease-in-out;
+  animation: carhud-enter .5s;
+
+  color: black;
+  background: white;
+  border: .5px solid rgba(0, 0, 0, 0.253);
+  border-radius: 5px;
+  box-shadow: 0 0 .8vh black;
+}
+
+.odometer-value,
+.odometer-unit {
+  height: 100%;
+  line-height: inherit;
+}
+
+@keyframes carhud-enter {
+  from {
+    bottom: -2vh;
+  }
+}
