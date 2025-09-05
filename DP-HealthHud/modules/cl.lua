@@ -83,7 +83,7 @@ Citizen.CreateThread(function()
 
         SendNUIMessage({
             action = "u-hud",
-            vida = GetEntityHealth(ped) - 105,
+            vida = GetEntityHealth(ped) - 100,
             hunger = hunger,
             thirst = thirst,
             escudo = GetPedArmour(ped),
