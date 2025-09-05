@@ -1,14 +1,12 @@
 local fuelSystem = string.upper(CarHUD.FuelSystem)
 
--- @main
-
-CreateThread(function ()
+CreateThread(function()
     while true do
         local player = PlayerPedId()
         local vehicle = GetVehiclePedIsIn(player)
         if not IsPauseMenuActive() and IsPedInAnyVehicle(player) and not IsThisModelABicycle(vehicle) then
             sleep = 50
-            
+
             if CarHUD.type == 'mp/h' then
                 vel = math.floor(GetEntitySpeed(vehicle) * 2.236936)
             elseif CarHUD.type == 'km/h' then
@@ -20,12 +18,12 @@ CreateThread(function ()
             if (fuelSystem == "LEGACYFUEL") then
                 fuelLevel = exports['LegacyFuel']:GetFuel(vehicle)
             elseif (fuelSystem == "NDFUEL") then
-                fuelLevel = exports['ND_Fuel']:GetFuel(vehicle) -- MUST ADD EXPORT IN NDFUEL SCRIPT
+                fuelLevel = exports['ND_Fuel']:GetFuel(vehicle)
             elseif (fuelSystem == "DEFAULT") then
                 fuelLevel = GetVehicleFuelLevel(vehicle)
             elseif (fuelSystem == "CUSTOM") then
-                -- Add Here the custom code
-                -- local fuelLevel = (CUSTOM CODE FOR GET FUEL)
+                -- Agregue aquí el código custom
+                -- local fuelLevel = (CÓDIGO custom PARA OBTENER COMBUSTIBLE)
             end
             local fuel = math.floor(fuelLevel)
 

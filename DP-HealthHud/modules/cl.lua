@@ -91,9 +91,6 @@ Citizen.CreateThread(function()
             oxigeno = GetPlayerUnderwaterTimeRemaining(PlayerId()) * 10,
             enVeh = IsPedInAnyVehicle(PlayerPedId())
         })
-        -- Cambia esta línea:
-        -- DisplayRadar(IsPedInAnyVehicle(PlayerPedId()))
-        -- Por esta:
         DisplayRadar(IsPedInAnyVehicle(PlayerPedId()) or minimapManualVisible)
         Wait(msec)
     end
@@ -129,7 +126,6 @@ Citizen.CreateThread(function()
         Citizen.Wait(1)
         local ped = GetPlayerPed(-1)
         SetRadarZoom(1100)
-        -- Cambia la lógica aquí también:
         if IsPedInAnyVehicle(ped, true) or minimapManualVisible then
             DisplayRadar(true)
         else

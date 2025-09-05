@@ -76,7 +76,7 @@
         odometer.style.display = "inline-flex";
         odometer.style.opacity = "0";
         odometer.style.animation = "none";
-        void odometer.offsetWidth; // Trigger reflow
+        void odometer.offsetWidth; // Reflujo del disparador
         odometer.style.animation = "carhud-enter 0.3s forwards";
         odometer.style.opacity = "1";
       } else {
